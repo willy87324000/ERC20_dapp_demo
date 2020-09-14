@@ -1,0 +1,69 @@
+<div class="container">
+    <h1>ERC20 簡易錢包</h1>
+    <div class="row justify-content-center">
+        <ngb-alert
+            class="w-100"
+            *ngIf="erc20Service.message.msg"
+            [type]="erc20Service.message.type"
+            (close)="erc20Service.removeMassage()"
+        >
+            {{ erc20Service.message.msg }}
+        </ngb-alert>
+        <hr>
+        <div class="col-12">
+            <h3>當前錢包資訊</h3>
+            <ul>
+                <li>地址: {{this.erc20Service.coinbase.address}}</li>
+                <li>Ether餘額: {{this.erc20Service.coinbase.balance}}</li>
+                <li>ERC20代幣餘額: {{this.erc20Service.coinbase.tokenBalance}}</li>
+            </ul>
+        </div>
+        <div class="col-12">
+            <h3>發送代幣</h3>
+            <form name="erc20Form" role="form" [formGroup]="this.erc20Service.inputForm">
+                <div class="form-group">
+                    <label for="recipient">接收者</label>
+                    <input type="text" class="form-control" id="recipient" name="recipient" formControlName="recipient"/>
+                </div>
+                <div class="form-group">
+                    <label for="recipient">代幣數量</label>
+                    <input type="text" class="form-control" id="amount" name="amount" formControlName="amount"/>
+                </div>
+                <div class="form-group">
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        (click)="this.erc20Service.transfer()"
+                        [disabled]="this.erc20Service.sending"
+                    >
+                        發送代幣
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <h2>確認對方代幣餘額</h2>
+        <div class="col-12">
+            <form name="checkERC20BalanceForm" role="form" [formGroup]="this.erc20Service.checkBalanceForm">
+                <div class="form-group">
+                    <label for="account">Ethereum帳號</label>
+                    <input type="text" class="form-control" id="account" name="account" formControlName="account"/>
+                </div>
+                <div class="form-group">
+                    <button
+                        type="submit"
+                        class="btn btn-info"
+                        (click)="this.erc20Service.getBalance()"
+                        [disabled]="this.erc20Service.loading"
+                    >
+                        查詢
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-12">
+            ERC20餘額: {{ this.erc20Service.balance }}
+        </div>
+    </div>
+</div>
