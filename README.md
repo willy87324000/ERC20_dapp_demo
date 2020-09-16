@@ -43,3 +43,10 @@ Linux/Macos: ./mvwn
 執行 `npm start`
 
 前端會監聽 9090 port
+
+## 參考
+
+如果要在 Ubuntu 建置本範例，可參考下面連結:
+
+[Ubuntu 環境設置 ERC20 範例說明
+](https://hackmd.io/6_fjYnyZT4Szu0BGsqb4Ug?view)
