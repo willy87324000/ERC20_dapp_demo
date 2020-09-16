@@ -48,5 +48,4 @@ Linux/Macos: ./mvwn
 
 如果要在 Ubuntu 建置本範例，可參考下面連結:
 
-[Ubuntu 環境設置 ERC20 範例說明
-](https://hackmd.io/6_fjYnyZT4Szu0BGsqb4Ug?view)
+[Ubuntu 環境設置 ERC20 範例說明](https://hackmd.io/6_fjYnyZT4Szu0BGsqb4Ug?view)
