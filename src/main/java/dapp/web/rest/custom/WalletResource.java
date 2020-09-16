@@ -1,7 +1,8 @@
 package dapp.web.rest.custom;
 
 import dapp.service.dto.CoinbaseDTO;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +15,10 @@ import dapp.service.dto.ResponseDTO;
 import dapp.service.dto.TransferRequestDTO;
 import dapp.type.StatusCode;
 
-@Slf4j
 @RestController
 @RequestMapping("/api")
 public class WalletResource {
+    Logger log = LoggerFactory.getLogger(SimpleERC20Service.class);
 
     SimpleERC20Service simpleERC20Service;
 

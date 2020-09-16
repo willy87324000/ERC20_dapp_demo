@@ -3,24 +3,16 @@ package dapp.service.dto;
 
 import java.io.Serializable;
 
-import lombok.Getter;
-import lombok.Setter;
 import dapp.type.StatusCode;
 
 public class ResponseDTO<T> implements Serializable {
 
     private static final long serialVersionUID = 8888L;
 
-    @Getter
-    @Setter
     private String msg;
 
-    @Getter
-    @Setter
     private String code;
 
-    @Getter
-    @Setter
     public T data;
 
     public ResponseDTO() {
@@ -34,6 +26,30 @@ public class ResponseDTO<T> implements Serializable {
     public ResponseDTO(T data, StatusCode statusCode) {
         this.data = data;
         this.setStatusCode(statusCode);
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
     }
 
     private void setStatusCode(StatusCode statusCode) {

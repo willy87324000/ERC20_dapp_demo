@@ -1,10 +1,5 @@
 package dapp.type;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
-@AllArgsConstructor
 public enum StatusCode {
     Success("0", "Success"),
 
@@ -12,11 +7,22 @@ public enum StatusCode {
 
     Failure("-2", "Failure");
 
-    @Getter
+    StatusCode(String code, String msg) {
+        this.code = code;
+        this.msg = msg;
+    }
+
     private final String code;
 
-    @Getter
     private final String msg;
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
 
     public static StatusCode toStatusCode(String code) {
         for (StatusCode tmp : StatusCode.values()) {

@@ -1,7 +1,8 @@
 package dapp.service;
 
 import dapp.service.dto.CoinbaseDTO;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.web3j.abi.datatypes.Type;
@@ -19,9 +20,10 @@ import javax.annotation.PostConstruct;
 import java.math.BigInteger;
 import java.util.Arrays;
 
-@Slf4j
 @Service
 public class SimpleERC20Service {
+    Logger log = LoggerFactory.getLogger(SimpleERC20Service.class);
+
     @Value("${cht.blockchain.ip}")
     public String _rcpURL;
     @Value("${cht.blockchain.erc_contract.addr}")
