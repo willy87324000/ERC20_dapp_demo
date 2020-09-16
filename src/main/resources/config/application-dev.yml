@@ -98,7 +98,6 @@ cht:
   blockchain:
     ip: 'http:/localhost:7545'
     erc_contract:
-      owner: '0xbE1fB2D12e2a07D3C65cbD735b026453EDB03d1D'
-      addr: '0xFeE3BFA5D4b363245A99359E49047277e4F414a6'
+      addr: '<ERC 20 contract address>'
     account:
-      privateKey: 'de394282ef3b1cbce3bd1171020e7f1292ca9cd6dc5a06e4b583f8c21d79ec56'
+      privateKey: '<Coinbase Private Key>'
